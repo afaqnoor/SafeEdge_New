@@ -5,9 +5,13 @@ import { useState } from "react";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Edu Document Solutions" },
-      { name: "description", content: "Get in touch for educational documentation guidance, consultation and verification support." },
-      { property: "og:title", content: "Contact — Edu Document Solutions" },
+      { title: "Contact — Safe Edge Solutions" },
+      {
+        name: "description",
+        content:
+          "Get in touch for educational documentation guidance, consultation and verification support.",
+      },
+      { property: "og:title", content: "Contact — Safe Edge Solutions" },
       { property: "og:description", content: "Contact form, WhatsApp, email and business hours." },
       { property: "og:url", content: "/contact" },
     ],
@@ -23,12 +27,15 @@ function ContactPage() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-aurora" />
         <div className="relative mx-auto max-w-6xl px-6 py-16 sm:py-20 text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--gold-deep)]">Contact</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--gold-deep)]">
+            Contact
+          </p>
           <h1 className="mt-3 text-4xl font-semibold sm:text-5xl">
             Let's <span className="text-gradient">talk about your case</span>
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-muted-foreground">
-            Reach out via the form, email, or WhatsApp — we typically respond within a couple of hours.
+            Reach out via the form, email, or WhatsApp — we typically respond within a couple of
+            hours.
           </p>
         </div>
       </section>
@@ -38,15 +45,22 @@ function ContactPage() {
           {/* Form */}
           <div className="lg:col-span-2 rounded-3xl border border-border bg-card p-8 shadow-soft">
             <h2 className="font-display text-2xl font-semibold">Send us a message</h2>
-            <p className="mt-2 text-sm text-muted-foreground">All inquiries are handled confidentially.</p>
+            <p className="mt-2 text-sm text-muted-foreground">
+              All inquiries are handled confidentially.
+            </p>
             {sent ? (
               <div className="mt-8 rounded-2xl border border-border bg-accent p-6 text-center">
                 <p className="font-display text-lg font-semibold text-primary">Thank you!</p>
-                <p className="mt-1 text-sm text-muted-foreground">Your message has been received. We'll be in touch shortly.</p>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  Your message has been received. We'll be in touch shortly.
+                </p>
               </div>
             ) : (
               <form
-                onSubmit={(e) => { e.preventDefault(); setSent(true); }}
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  setSent(true);
+                }}
                 className="mt-6 grid gap-4 sm:grid-cols-2"
               >
                 <Field label="Full Name" name="name" required />
@@ -98,7 +112,11 @@ function ContactPage() {
                 </div>
               </div>
             </a>
-            <InfoCard icon={Clock} title="Business Hours" lines={["Mon – Sat: 9:00 AM – 7:00 PM", "Sun: Closed"]} />
+            <InfoCard
+              icon={Clock}
+              title="Business Hours"
+              lines={["Mon – Sat: 9:00 AM – 7:00 PM", "Sun: Closed"]}
+            />
             <InfoCard icon={MapPin} title="Location" lines={["Lahore, Pakistan"]} />
           </div>
         </div>
@@ -121,11 +139,23 @@ function ContactPage() {
 }
 
 function Field({
-  label, name, type = "text", required, className,
-}: { label: string; name: string; type?: string; required?: boolean; className?: string }) {
+  label,
+  name,
+  type = "text",
+  required,
+  className,
+}: {
+  label: string;
+  name: string;
+  type?: string;
+  required?: boolean;
+  className?: string;
+}) {
   return (
     <div className={className}>
-      <label htmlFor={name} className="text-sm font-medium text-foreground">{label}</label>
+      <label htmlFor={name} className="text-sm font-medium text-foreground">
+        {label}
+      </label>
       <input
         id={name}
         name={name}
@@ -147,7 +177,11 @@ function InfoCard({ icon: Icon, title, lines }: { icon: any; title: string; line
         </div>
         <div>
           <div className="font-display text-base font-semibold">{title}</div>
-          {lines.map((l) => <div key={l} className="text-sm text-muted-foreground">{l}</div>)}
+          {lines.map((l) => (
+            <div key={l} className="text-sm text-muted-foreground">
+              {l}
+            </div>
+          ))}
         </div>
       </div>
     </div>

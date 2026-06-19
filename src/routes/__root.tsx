@@ -80,10 +80,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Edu Document Solutions — Educational Documentation & Verification" },
-      { name: "description", content: "Professional educational documentation, verification guidance, consultation, and student support services." },
-      { name: "author", content: "Edu Document Solutions" },
-      { property: "og:site_name", content: "Edu Document Solutions" },
+      { title: "Safe Edge Solutions — Educational Documentation & Verification" },
+      {
+        name: "description",
+        content:
+          "Professional educational documentation, verification guidance, consultation, and student support services.",
+      },
+      { name: "author", content: "Safe Edge Solutions" },
+      { property: "og:site_name", content: "Safe Edge Solutions" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
