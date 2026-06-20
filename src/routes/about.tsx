@@ -4,13 +4,13 @@ import { Target, Eye, Heart, Award, Users, ShieldCheck } from "lucide-react";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Safe Edge Solutions" },
+      { title: "About — SafeEdge international training Center " },
       {
         name: "description",
         content:
-          "Learn about Safe Edge Solutions — our mission, values and team supporting students with educational documentation.",
+          "Learn about SafeEdge international training Center — our mission, values and team supporting students with educational documentation.",
       },
-      { property: "og:title", content: "About — Safe Edge Solutions" },
+      { property: "og:title", content: "About — SafeEdge international training Center" },
       { property: "og:description", content: "Our mission, values, and team." },
       { property: "og:url", content: "/about" },
     ],
@@ -57,8 +57,8 @@ function AboutPage() {
             A team built on <span className="text-gradient">trust & expertise</span>
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-muted-foreground">
-            Safe Edge Solutions has spent years helping students and professionals navigate
-            educational documentation with clarity and care.
+            SafeEdge international training Center has spent years helping students and
+            professionals navigate educational documentation with clarity and care.
           </p>
         </div>
       </section>

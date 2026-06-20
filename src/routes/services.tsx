@@ -10,18 +10,23 @@ import {
   Briefcase,
   ArrowRight,
   Check,
+  ShieldCheck,
+  Award,
 } from "lucide-react";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services — Safe Edge Solutions" },
+      { title: "Services — SafeEdge international training Center" },
       {
         name: "description",
         content:
           "Educational documentation guidance, verification support, consultation and application assistance.",
       },
-      { property: "og:title", content: "Services — Safe Edge Solutions" },
+      {
+        property: "og:title",
+        content: "Services — SafeEdge international training Center",
+      },
       {
         property: "og:description",
         content: "Comprehensive educational documentation guidance and consultation services.",
@@ -34,6 +39,28 @@ export const Route = createFileRoute("/services")({
 });
 
 const services = [
+  {
+    icon: ShieldCheck,
+    title: "Safety Certificate Assistance",
+    desc: "Complete documentation and registration guidance for major safety certificates.",
+    benefits: [
+      "NEBOSH, IOSH, & OSHA (30hr, 48hr)",
+      "BLS, First Aid, & Fire Safety",
+      "ISO (14001, 9001, 45001) & HiQual UK",
+      "Work permit receiver & QA/QC support",
+    ],
+  },
+  {
+    icon: Award,
+    title: "Skills Base Diploma Guidance",
+    desc: "Academic documentation assistance for 1, 2, and 3-year skill diplomas.",
+    benefits: [
+      "DAE (Diploma of Associate Engineer)",
+      "Electrical, Civil, & Mechanical",
+      "IT & DIT (1-year) diplomas",
+      "Medical & healthcare diplomas",
+    ],
+  },
   {
     icon: FileText,
     title: "Internal Documentation Support",

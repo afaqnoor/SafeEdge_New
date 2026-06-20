@@ -23,13 +23,15 @@ import { useState } from "react";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Safe Edge Solutions — Educational Documentation & Verification" },
+      {
+        title: "SafeEdge international training Center — Educational Documentation & Verification",
+      },
       {
         name: "description",
         content:
           "Professional educational documentation, verification guidance, consultation, and student support.",
       },
-      { property: "og:title", content: "Safe Edge Solutions" },
+      { property: "og:title", content: "SafeEdge international training Center" },
       {
         property: "og:description",
         content:
@@ -73,6 +75,16 @@ const features = [
 ];
 
 const services = [
+  {
+    icon: ShieldCheck,
+    title: "Safety Certificate Assistance",
+    desc: "Registration and documentation guidance for NEBOSH, IOSH, OSHA, & ISO.",
+  },
+  {
+    icon: Award,
+    title: "Skills Base Diploma Guidance",
+    desc: "Support for 1, 2, or 3-year diplomas including DAE, IT, & Medical fields.",
+  },
   {
     icon: BookOpen,
     title: "Matric Documentation Guidance",

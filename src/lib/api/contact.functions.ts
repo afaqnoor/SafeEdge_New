@@ -31,10 +31,12 @@ export const sendContactEmail = createServerFn({ method: "POST" })
           // Note: When using Resend's free tier, you can send emails from 'onboarding@resend.dev'
           // only to your own registered email address.
           // Once you verify a custom domain in Resend, you can change 'onboarding@resend.dev' to 'info@yourdomain.com'.
-          from: "Safe Edge Solutions <onboarding@resend.dev>",
+          from: "SafeEdge international training Center <onboarding@resend.dev>",
           to: "afaqnoor.ninesol@gmail.com",
           replyTo: data.email, // Allows you to click "Reply" in your email client to reply directly to the sender
-          subject: data.subject ? `[Contact Form] ${data.subject}` : `New SafeEdge Contact: ${data.name}`,
+          subject: data.subject
+            ? `[Contact Form] ${data.subject}`
+            : `New SafeEdge Contact: ${data.name}`,
           html: `
             <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; border: 1px solid #eee; padding: 20px; border-radius: 8px;">
               <h3 style="color: #1a73e8; border-bottom: 1px solid #ddd; padding-bottom: 8px; margin-top: 0;">New Contact Form Submission</h3>
@@ -63,6 +65,10 @@ export const sendContactEmail = createServerFn({ method: "POST" })
       return { success: true, id: result.id };
     } catch (error) {
       console.error("Error in sendContactEmail handler:", error);
-      throw new Error(error instanceof Error ? error.message : "An unexpected error occurred while sending the email.");
+      throw new Error(
+        error instanceof Error
+          ? error.message
+          : "An unexpected error occurred while sending the email.",
+      );
     }
   });

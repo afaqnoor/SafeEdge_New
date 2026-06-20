@@ -6,13 +6,16 @@ import { sendContactEmail } from "@/lib/api/contact.functions";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Safe Edge Solutions" },
+      { title: "Contact — SafeEdge international training Center" },
       {
         name: "description",
         content:
           "Get in touch for educational documentation guidance, consultation and verification support.",
       },
-      { property: "og:title", content: "Contact — Safe Edge Solutions" },
+      {
+        property: "og:title",
+        content: "Contact — SafeEdge international training Center",
+      },
       { property: "og:description", content: "Contact form, WhatsApp, email and business hours." },
       { property: "og:url", content: "/contact" },
     ],
@@ -46,7 +49,7 @@ function ContactPage() {
     } catch (err) {
       console.error("Form submission error:", err);
       setSubmitError(
-        err instanceof Error ? err.message : "Failed to send message. Please try again later."
+        err instanceof Error ? err.message : "Failed to send message. Please try again later.",
       );
     } finally {
       setIsSubmitting(false);
@@ -92,20 +95,18 @@ function ContactPage() {
                     strokeLinejoin="round"
                     viewBox="0 0 24 24"
                   >
-                    <polyline
-                      className="animate-checkmark"
-                      points="20 6 9 17 4 12"
-                    />
+                    <polyline className="animate-checkmark" points="20 6 9 17 4 12" />
                   </svg>
                 </div>
-                
+
                 <h3 className="mt-6 font-display text-2xl font-bold text-gradient">
                   Message Sent Successfully!
                 </h3>
                 <p className="mx-auto mt-2 max-w-sm text-sm text-muted-foreground">
-                  Thank you! Your inquiry has been received. Our team will review your details and get back to you shortly.
+                  Thank you! Your inquiry has been received. Our team will review your details and
+                  get back to you shortly.
                 </p>
-                
+
                 <button
                   onClick={() => setSent(false)}
                   className="mt-6 rounded-xl border border-input bg-background px-5 py-2.5 text-xs font-semibold text-foreground transition hover:bg-muted"
@@ -114,10 +115,7 @@ function ContactPage() {
                 </button>
               </div>
             ) : (
-              <form
-                onSubmit={handleSubmit}
-                className="mt-6 grid gap-4 sm:grid-cols-2"
-              >
+              <form onSubmit={handleSubmit} className="mt-6 grid gap-4 sm:grid-cols-2">
                 <Field label="Full Name" name="name" required />
                 <Field label="Email" name="email" type="email" required />
                 <Field label="Phone" name="phone" type="tel" className="sm:col-span-1" />

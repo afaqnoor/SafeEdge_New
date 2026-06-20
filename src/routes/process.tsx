@@ -4,13 +4,16 @@ import { MessageSquare, Phone, FileSearch, Compass, CheckCircle2, ArrowRight } f
 export const Route = createFileRoute("/process")({
   head: () => ({
     meta: [
-      { title: "Our Process — Safe Edge Solutions" },
+      { title: "Our Process — SafeEdge international training Center" },
       {
         name: "description",
         content:
           "A clear five-step process to handle your educational documentation needs end-to-end.",
       },
-      { property: "og:title", content: "Our Process — Safe Edge Solutions" },
+      {
+        property: "og:title",
+        content: "Our Process — SafeEdge international training Center",
+      },
       {
         property: "og:description",
         content: "Submit inquiry, consultation, document review, processing guidance, completion.",

@@ -12,9 +12,8 @@ export function Footer() {
                 <GraduationCap className="h-5 w-5" />
               </span>
               <span className="flex flex-col leading-none">
-                <span className="font-display text-base font-semibold">Safe Edge Solutions</span>
-                <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
-                  Solutions
+                <span className="font-display text-base font-semibold">
+                  SafeEdge international training Center
                 </span>
               </span>
             </div>
@@ -86,7 +85,10 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-border pt-6 text-xs text-muted-foreground sm:flex-row">
-          <p>© {new Date().getFullYear()} Safe Edge Solutions. All rights reserved.</p>
+          <p>
+            © {new Date().getFullYear()} SafeEdge international training Center. All rights
+            reserved.
+          </p>
           <p>Legitimate educational guidance & verification support only.</p>
         </div>
       </div>

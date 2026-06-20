@@ -20,9 +20,8 @@ export function Navbar() {
             <GraduationCap className="h-5 w-5" />
           </span>
           <span className="flex flex-col leading-none">
-            <span className="font-display text-base font-semibold text-foreground">Safe Edge</span>
-            <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
-              Solutions
+            <span className="font-display text-base font-semibold text-foreground">
+              SafeEdge international training Center
             </span>
           </span>
         </Link>
