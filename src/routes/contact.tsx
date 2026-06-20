@@ -80,11 +80,38 @@ function ContactPage() {
               All inquiries are handled confidentially.
             </p>
             {sent ? (
-              <div className="mt-8 rounded-2xl border border-border bg-accent p-6 text-center">
-                <p className="font-display text-lg font-semibold text-primary">Thank you!</p>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  Your message has been received. We'll be in touch shortly.
+              <div className="mt-8 flex flex-col items-center justify-center p-8 text-center animate-success-pop">
+                {/* Beautiful animated success checkmark */}
+                <div className="relative flex h-20 w-20 items-center justify-center rounded-full bg-[image:var(--gradient-hero)] text-white shadow-glow animate-wave-glow">
+                  <svg
+                    className="h-10 w-10 text-primary-foreground"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="3.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    viewBox="0 0 24 24"
+                  >
+                    <polyline
+                      className="animate-checkmark"
+                      points="20 6 9 17 4 12"
+                    />
+                  </svg>
+                </div>
+                
+                <h3 className="mt-6 font-display text-2xl font-bold text-gradient">
+                  Message Sent Successfully!
+                </h3>
+                <p className="mx-auto mt-2 max-w-sm text-sm text-muted-foreground">
+                  Thank you! Your inquiry has been received. Our team will review your details and get back to you shortly.
                 </p>
+                
+                <button
+                  onClick={() => setSent(false)}
+                  className="mt-6 rounded-xl border border-input bg-background px-5 py-2.5 text-xs font-semibold text-foreground transition hover:bg-muted"
+                >
+                  Send another message
+                </button>
               </div>
             ) : (
               <form
