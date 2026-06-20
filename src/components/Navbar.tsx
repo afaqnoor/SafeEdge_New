@@ -18,6 +18,7 @@ export function Navbar() {
         <Link to="/" className="flex items-center gap-2.5">
           <span className="grid h-9 w-9 place-items-center rounded-xl bg-[image:var(--gradient-hero)] text-primary-foreground shadow-soft">
             <GraduationCap className="h-5 w-5" />
+            {/* <img src="/assets/logo.png" alt="Icon" className="h-5 w-5" /> */}
           </span>
           <span className="flex flex-col leading-none">
             <span className="font-display text-base font-semibold text-foreground">
