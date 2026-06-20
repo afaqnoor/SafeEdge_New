@@ -87,7 +87,7 @@ export function Footer() {
             <h4 className="font-display text-sm font-semibold text-foreground">Contact</h4>
             <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
               <li className="flex items-start gap-2">
-                <Mail className="mt-0.5 h-4 w-4 text-primary" /> info@isdc.uk
+                <Mail className="mt-0.5 h-4 w-4 text-primary" /> Safeedgeitc@gmail.com
               </li>
               <li className="flex items-start gap-2">
                 <Phone className="mt-0.5 h-4 w-4 text-primary" /> +92 3088055171
