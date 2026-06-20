@@ -18,7 +18,7 @@ import {
   Clock,
   Globe2,
 } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -45,10 +45,10 @@ export const Route = createFileRoute("/")({
 });
 
 const stats = [
-  { value: "10K+", label: "Students Assisted" },
-  { value: "8+", label: "Years of Experience" },
-  { value: "98%", label: "Satisfaction Rate" },
-  { value: "24/7", label: "Support Available" },
+  { target: 10, suffix: "K+", label: "Students Assisted" },
+  { target: 8, suffix: "+", label: "Years of Experience" },
+  { target: 98, suffix: "%", label: "Satisfaction Rate" },
+  { target: 24, suffix: "/7", label: "Support Available" },
 ];
 
 const features = [
@@ -207,7 +207,7 @@ function Home() {
             {stats.map((s) => (
               <div key={s.label} className="text-center">
                 <div className="text-gradient font-display text-3xl font-semibold sm:text-4xl">
-                  {s.value}
+                  <CountUp target={s.target} suffix={s.suffix} />
                 </div>
                 <div className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">
                   {s.label}
@@ -437,5 +437,55 @@ function FaqItem({ q, a }: { q: string; a: string }) {
         </div>
       )}
     </div>
+  );
+}
+
+function CountUp({ target, suffix }: { target: number; suffix: string }) {
+  const [count, setCount] = useState(0);
+  const [started, setStarted] = useState(false);
+  const ref = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    // Use IntersectionObserver to start animation only when visible on screen
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !started) {
+          setStarted(true);
+        }
+      },
+      { threshold: 0.5 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [started]);
+
+  useEffect(() => {
+    if (!started) return;
+
+    const duration = 1800; // ms
+    const steps = 60;
+    const stepTime = duration / steps;
+    let current = 0;
+
+    const timer = setInterval(() => {
+      current += 1;
+      // Use easeOutQuart for a natural deceleration
+      const progress = current / steps;
+      const eased = 1 - Math.pow(1 - progress, 4);
+      setCount(Math.round(eased * target));
+      if (current >= steps) clearInterval(timer);
+    }, stepTime);
+
+    return () => clearInterval(timer);
+  }, [started, target]);
+
+  return (
+    <span ref={ref}>
+      {count}
+      {suffix}
+    </span>
   );
 }
