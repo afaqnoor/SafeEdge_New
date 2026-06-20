@@ -165,9 +165,9 @@ function ContactPage() {
           {/* Info */}
           <div className="space-y-4">
             <InfoCard icon={Mail} title="Email" lines={["info@isdc.uk"]} />
-            <InfoCard icon={Phone} title="Phone" lines={["+92 318 1999166"]} />
+            <InfoCard icon={Phone} title="Phone" lines={["+92 3088055171"]} />
             <a
-              href="https://wa.me/923181999166"
+              href="https://wa.me/923088055171"
               target="_blank"
               rel="noopener noreferrer"
               className="group block rounded-2xl bg-[#25D366] p-6 text-white shadow-elegant transition hover:-translate-y-1"

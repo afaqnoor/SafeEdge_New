@@ -60,8 +60,26 @@ export function Footer() {
               <li>Matric Documentation</li>
               <li>FSC Documentation</li>
               <li>Certificate Verification</li>
-              <li>Student Consultation</li>
-              <li>Application Assistance</li>
+              <li>Nebosh</li>
+              <li>IOSH</li>
+              <li>OSHA</li>
+              <li>ISO 14001,9001,45001 </li>
+              <li>DAE</li>
+              <li>Quality control (QA/QC)</li>
+              <li>Work permit receiver</li>
+              <li>First aid</li>
+              <li>Fire safety</li>
+              <li>IT Diplomas</li>
+              <li>HiQual Uk</li>
+              <li>Medical Diplomas</li>
+              <li>Skills Base Diploma</li>
+              <li>DAE</li>
+              <li>Electrical</li>
+              <li>Civil</li>
+              <li>Mechanical </li>
+              <li>IT</li>
+              <li>Medical Diploma</li>
+              <li>Dit 1 year</li>
             </ul>
           </div>
 
@@ -72,7 +90,7 @@ export function Footer() {
                 <Mail className="mt-0.5 h-4 w-4 text-primary" /> info@isdc.uk
               </li>
               <li className="flex items-start gap-2">
-                <Phone className="mt-0.5 h-4 w-4 text-primary" /> +92 318 1999166
+                <Phone className="mt-0.5 h-4 w-4 text-primary" /> +92 3088055171
               </li>
               <li className="flex items-start gap-2">
                 <MessageCircle className="mt-0.5 h-4 w-4 text-primary" /> WhatsApp available
