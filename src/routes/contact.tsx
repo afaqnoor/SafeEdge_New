@@ -164,7 +164,7 @@ function ContactPage() {
 
           {/* Info */}
           <div className="space-y-4">
-            <InfoCard icon={Mail} title="Email" lines={["info@isdc.uk"]} />
+            <InfoCard icon={Mail} title="Email" lines={["Safeedgeitc@gmail.com"]} />
             <InfoCard icon={Phone} title="Phone" lines={["+92 3088055171"]} />
             <a
               href="https://wa.me/923088055171"
