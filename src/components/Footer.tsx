@@ -73,13 +73,13 @@ export function Footer() {
                 <Mail className="mt-0.5 h-4 w-4 text-primary" /> support@edudocsolutions.com
               </li>
               <li className="flex items-start gap-2">
-                <Phone className="mt-0.5 h-4 w-4 text-primary" /> +92 300 0000000
+                <Phone className="mt-0.5 h-4 w-4 text-primary" /> +92 318 1999166
               </li>
               <li className="flex items-start gap-2">
                 <MessageCircle className="mt-0.5 h-4 w-4 text-primary" /> WhatsApp available
               </li>
               <li className="flex items-start gap-2">
-                <MapPin className="mt-0.5 h-4 w-4 text-primary" /> Lahore, Pakistan
+                <MapPin className="mt-0.5 h-4 w-4 text-primary" /> Peshawar, Pakistan
               </li>
             </ul>
           </div>

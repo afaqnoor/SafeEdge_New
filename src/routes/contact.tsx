@@ -94,10 +94,10 @@ function ContactPage() {
 
           {/* Info */}
           <div className="space-y-4">
-            <InfoCard icon={Mail} title="Email" lines={["support@edudocsolutions.com"]} />
-            <InfoCard icon={Phone} title="Phone" lines={["+92 300 0000000"]} />
+            <InfoCard icon={Mail} title="Email" lines={["info@isdc.uk"]} />
+            <InfoCard icon={Phone} title="Phone" lines={["+92 318 1999166"]} />
             <a
-              href="https://wa.me/923000000000"
+              href="https://wa.me/923181999166"
               target="_blank"
               rel="noopener noreferrer"
               className="group block rounded-2xl bg-[#25D366] p-6 text-white shadow-elegant transition hover:-translate-y-1"
@@ -117,7 +117,7 @@ function ContactPage() {
               title="Business Hours"
               lines={["Mon – Sat: 9:00 AM – 7:00 PM", "Sun: Closed"]}
             />
-            <InfoCard icon={MapPin} title="Location" lines={["Lahore, Pakistan"]} />
+            <InfoCard icon={MapPin} title="Location" lines={["Peshawar, Pakistan"]} />
           </div>
         </div>
 
@@ -125,7 +125,7 @@ function ContactPage() {
         <div className="mt-10 overflow-hidden rounded-3xl border border-border shadow-soft">
           <iframe
             title="Office location"
-            src="https://www.google.com/maps?q=Lahore,Pakistan&output=embed"
+            src="https://www.google.com/maps?q=Peshawar,Pakistan&output=embed"
             width="100%"
             height="380"
             loading="lazy"
