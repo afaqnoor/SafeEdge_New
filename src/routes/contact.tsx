@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Mail, Phone, MapPin, Clock, MessageCircle, Send, Lock } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, MessageCircle, Send, Lock, Loader2 } from "lucide-react";
 import { useState } from "react";
+import { sendContactEmail } from "@/lib/api/contact.functions";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -22,6 +23,36 @@ export const Route = createFileRoute("/contact")({
 
 function ContactPage() {
   const [sent, setSent] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get("name") as string;
+    const email = formData.get("email") as string;
+    const phone = formData.get("phone") as string;
+    const subject = formData.get("subject") as string;
+    const message = formData.get("message") as string;
+
+    try {
+      await sendContactEmail({
+        data: { name, email, phone, subject, message },
+      });
+      setSent(true);
+    } catch (err) {
+      console.error("Form submission error:", err);
+      setSubmitError(
+        err instanceof Error ? err.message : "Failed to send message. Please try again later."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <>
       <section className="relative overflow-hidden">
@@ -57,10 +88,7 @@ function ContactPage() {
               </div>
             ) : (
               <form
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  setSent(true);
-                }}
+                onSubmit={handleSubmit}
                 className="mt-6 grid gap-4 sm:grid-cols-2"
               >
                 <Field label="Full Name" name="name" required />
@@ -71,21 +99,38 @@ function ContactPage() {
                   <label className="text-sm font-medium text-foreground">Message</label>
                   <textarea
                     required
+                    name="message"
                     rows={5}
                     maxLength={1000}
                     className="mt-1.5 w-full rounded-xl border border-input bg-background px-4 py-3 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-ring/30"
                     placeholder="Tell us briefly about your documentation needs…"
                   />
                 </div>
+
+                {submitError && (
+                  <div className="sm:col-span-2 rounded-xl border border-red-200 bg-red-50/50 p-4 text-sm text-red-600 dark:border-red-900/30 dark:bg-red-950/20 dark:text-red-400">
+                    {submitError}
+                  </div>
+                )}
+
                 <div className="sm:col-span-2 flex flex-wrap items-center justify-between gap-3">
                   <p className="inline-flex items-center gap-1.5 text-xs text-muted-foreground">
                     <Lock className="h-3.5 w-3.5 text-primary" /> Secure & confidential
                   </p>
                   <button
                     type="submit"
-                    className="inline-flex items-center gap-2 rounded-xl bg-[image:var(--gradient-hero)] px-6 py-3 text-sm font-semibold text-primary-foreground shadow-elegant transition hover:-translate-y-0.5"
+                    disabled={isSubmitting}
+                    className="inline-flex items-center gap-2 rounded-xl bg-[image:var(--gradient-hero)] px-6 py-3 text-sm font-semibold text-primary-foreground shadow-elegant transition hover:-translate-y-0.5 disabled:opacity-75 disabled:pointer-events-none"
                   >
-                    Send Message <Send className="h-4 w-4" />
+                    {isSubmitting ? (
+                      <>
+                        Sending... <Loader2 className="h-4 w-4 animate-spin" />
+                      </>
+                    ) : (
+                      <>
+                        Send Message <Send className="h-4 w-4" />
+                      </>
+                    )}
                   </button>
                 </div>
               </form>
