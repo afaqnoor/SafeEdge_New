@@ -1,4 +1,4 @@
-<img width="1080" height="2400" alt="Screenshot_20260629-192045" src="https://github.com/user-attachments/assets/bf45898d-d463-47c7-82e8-39ed1d5442fc" /><img width="1080" height="2400" alt="Screenshot_20260629-192045" src="https://github.com/user-attachments/assets/1730479b-6606-45a4-8055-fd6454687fb3" /><img width="1080" height="2400" alt="Screenshot_20260629-192045" src="https://github.com/user-attachments/assets/b537819a-0a9f-4626-af45-c7b3be2279a2" /># Project Name (SafeEdge)
+Project Name (SafeEdge)
 
 A brief description of what this project does and the problem it solves. 
 
@@ -19,8 +19,12 @@ A brief description of what this project does and the problem it solves.
 
 ## 📱 Live Demo / Screenshots
 * https://safe-edge-new.vercel.app/
-* 
+<img width="240" height="240" alt="Screenshot_20260629-192045" src="https://github.com/user-attachments/assets/d840a68e-d737-4f43-bcd2-23be83c5274a" />
+<img width="240" height="240" alt="Screenshot_20260629-192115" src="https://github.com/user-attachments/assets/4903723e-61ef-4d2c-8ca0-0c2b2c582883" />
+<img width="240" height="240" alt="Screenshot_20260629-192133" src="https://github.com/user-attachments/assets/561616b8-c247-4903-80e0-dde688c9bbc6" />
+<img width="240" height="240" alt="Screenshot_20260629-192125" src="https://github.com/user-attachments/assets/d49a48e1-74aa-4360-8988-9440b8e891fa" />
+
 
 ## 👤 Contact
 * Email: afaqn8993@gmail.com
-* LinkedIn: [Link to your profile]
+* LinkedIn: https://www.linkedin.com/in/afaq-noor-41680a245/?skipRedirect=true
